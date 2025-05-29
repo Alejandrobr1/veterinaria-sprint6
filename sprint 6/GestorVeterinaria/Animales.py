@@ -19,7 +19,7 @@ class Mascota:
         self.nombre_mascota = nombre_mascota
         self.especie = especie
         self.raza = raza
-        self.edad = edad
+        self.edad = int(edad)
         self.duenho = duenho
 
     def __str__(self):

@@ -17,7 +17,7 @@ class Duenho:
             direccion (str): Dirección del domicilio
         """
         self.nombre_duenho = nombre_duenho
-        self.telefono = telefono
+        self.telefono = int(telefono)
         self.direccion = direccion
 
     def __str__(self):

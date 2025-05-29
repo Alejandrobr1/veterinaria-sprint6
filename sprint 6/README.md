@@ -46,6 +46,38 @@ proyecto, además al registrar una consulta, se necesita tener ya la mascota reg
 Si se registra la misma mascota y el mismo dueño, el programa muestra un mensaje diciendo que ya esta registrada la 
 mascota.
 
+## Sistema de Almacenamiento de Datos
+
+El sistema utiliza diferentes formatos de archivo para almacenar la información de manera organizada y eficiente:
+
+### 5. Archivos CSV (Comma-Separated Values)
+
+#### mascotas.csv
+- Almacena la información básica de cada mascota
+- Estructura: nombre,especie,raza,edad,dueño
+- Modo de acceso: lectura/escritura (append)
+- Se utiliza para registros permanentes y consultas rápidas
+
+#### duenhos.csv
+- Contiene los datos de contacto de los dueños
+- Estructura: nombre,telefono,direccion
+- Modo de acceso: lectura/escritura (append)
+- Permite mantener un registro actualizado de los propietarios
+
+### 6. Archivo JSON (JavaScript Object Notation)
+
+#### consultas.json
+- Almacena el historial médico y consultas
+- Estructura:  "consultas": [
+        {
+            "Fecha de la consulta": "DD/MM/AAAA",
+            "Motivo": "Texto",
+            "Diagnostico": "Texto",
+            "Mascota": "Texto"
+        }
+}
+
+
 ## Manejo de Errores y Logging
 
 ### Sistema de Logs
