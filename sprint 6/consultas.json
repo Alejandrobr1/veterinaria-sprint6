@@ -1,0 +1,34 @@
+{
+    "consultas": [
+        {
+            "fecha": "20-02-2011",
+            "motivo": "pore",
+            "diagnostico": "ere",
+            "mascota_relacionada": "Oto"
+        },
+        {
+            "fecha": "03-04-2013",
+            "motivo": "dolor",
+            "diagnostico": "gastroenteritis",
+            "mascota_relacionada": "Georgina"
+        },
+        {
+            "fecha": "02-03-2013",
+            "motivo": "dolor",
+            "diagnostico": "peritonitis",
+            "mascota_relacionada": "Georgina"
+        },
+        {
+            "fecha": "02-03-2020",
+            "motivo": "cola grande",
+            "diagnostico": "colitis",
+            "mascota_relacionada": "Trelo"
+        },
+        {
+            "fecha": "03-02-2019",
+            "motivo": "no repta",
+            "diagnostico": "reptinitis",
+            "mascota_relacionada": "Bob"
+        }
+    ]
+}

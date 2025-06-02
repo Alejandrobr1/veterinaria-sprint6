@@ -1,0 +1,8 @@
+2025-06-02 11:50:18,354 - INFO - la mascota Bob fue registrada
+2025-06-02 11:50:41,556 - INFO - Consulta registrada para la mascota Bob con fecha 03-02-2019
+2025-06-02 11:51:04,137 - INFO - se ha cerrado el programa
+2025-06-02 11:52:49,551 - WARNING - la mascota Tan no tiene consultas registradas
+2025-06-02 12:06:07,971 - WARNING - 'module' object is not callable. Did you mean: 'MascotaNotFoundError.MascotaNotFoundError(...)'?
+2025-06-02 12:07:25,809 - INFO - se ha cerrado el programa
+2025-06-02 12:11:07,011 - WARNING - la mascota Tan no tiene consultas registradas
+2025-06-02 12:15:31,196 - WARNING - la mascota Re no existe
