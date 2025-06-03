@@ -1,8 +1,9 @@
 from Controller import *
+from GestorVeterinaria.MascotaNotFoundError import MascotaNotFoundError
 from Models import Mascota,Duenho,Consulta
 import logging
 
-logging.basicConfig(filename='clinica_veterinaria.log', 
+logging.basicConfig(filename='clinica_veterinaria.log',
                     level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -108,19 +109,23 @@ def menu():
             print("Datos de los dueño")
             print("-"*60)
             listar_duenhos()
+
         # Opción 4: Mostrar historial de consultas de una mascota
+
         elif opcion == 4:
-            
             nombre_mascota = str(input('ingrese el nombre de la mascota: ')).lower().strip().capitalize()
-            if buscar_mascota(nombre_mascota):
-                if not cargar_consultas_json(nombre_mascota):
-                    logging.warning(f"la mascota {nombre_mascota} no tiene consultas registradas")
-                    print("No hay consultas asociadas a la mascota", nombre_mascota)
-            else:
-            
-                logging.warning(f"la mascota {nombre_mascota} no existe")
-                print("No hay consultas asociadas a la mascota", nombre_mascota)
+            try:
+                if buscar_mascota(nombre_mascota):
+                    if not cargar_consultas_json(nombre_mascota):
+                        logging.warning(f"la mascota {nombre_mascota} no tiene consultas registradas")
+                        print("No hay consultas asociadas a la mascota", nombre_mascota)
+                else:
+                    raise MascotaNotFoundError(f"la mascota {nombre_mascota} no existe")
+            except MascotaNotFoundError as error:
+                logging.warning(error)
+                print(error)
         # Opción 5: Salir del sistema
+
         elif opcion == 5:
             logging.info("se ha cerrado el programa")
             exit()

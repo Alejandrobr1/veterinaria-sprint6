@@ -124,11 +124,11 @@ def cargar_consultas_json(nombre_mascota):
     Carga el historial de consultas de una mascota desde el archivo JSON.
     """
     crear_archivo_consultas()  # Asegura que el archivo de consultas exista
-    with open("consultas.json", "r") as file:
-        consultas = json.load(file)
-        for consulta in consultas["consultas"]:
-            if consulta["mascota_relacionada"] == nombre_mascota:
-                print(f"Fecha: {consulta['fecha']}, Motivo: {consulta['motivo']}, Diagnóstico: {consulta['diagnostico']}")
-                return True
-            else:
-                return False
+    with open('consultas.json', 'r', encoding='utf-8') as archivo:
+        datos = json.load(archivo)
+        consultas = [consulta for consulta in datos["consultas"] if consulta['mascota_relacionada'] == nombre_mascota]
+        if not consultas:
+            return False
+        for consulta in consultas:
+            print(f"Fecha: {consulta['fecha']}, Motivo: {consulta['motivo']}, Diagnóstico: {consulta['diagnostico']}")
+        return True
